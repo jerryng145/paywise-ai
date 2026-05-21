@@ -1,0 +1,153 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "PayWise AI Budget Planner",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "iOS",
+      "url": "https://jerryng145.github.io/paywise-ai/",
+      "downloadUrl": "https://apps.apple.com/us/app/paywise-ai-budget-planner/id6769028548",
+      "description": "PayWise AI Budget Planner helps users track debts, repayment dates, payoff progress, and AI-guided repayment insights for personal organization and educational budgeting guidance.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free plan",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Track up to 5 debts."
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Premium",
+          "price": "3.99",
+          "priceCurrency": "USD",
+          "description": "Monthly Premium after a 7-day free trial."
+        },
+        {
+          "@type": "Offer",
+          "name": "Yearly Premium",
+          "price": "29.99",
+          "priceCurrency": "USD",
+          "description": "Yearly Premium after a 7-day free trial."
+        },
+        {
+          "@type": "Offer",
+          "name": "Lifetime Premium",
+          "price": "34.99",
+          "priceCurrency": "USD",
+          "description": "One-time lifetime Premium purchase."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is PayWise AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PayWise AI is a personal finance app that helps users organize debts, repayment dates, payoff progress, and AI-guided repayment insights in one place."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PayWise AI a budget planner?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PayWise AI works as a simple budget planner focused on debt tracking, repayment planning, payoff progress, and personal financial habits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can PayWise AI track credit card debt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PayWise AI can be used to track credit card balances, repayment dates, progress, and payoff planning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can PayWise AI track PayLater or installment debt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PayWise AI can help organize PayLater balances, installment payments, repayment dates, and overall payoff progress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does PayWise AI support loans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PayWise AI can help users track personal loans, car loans, home loans, and other debt repayment plans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the debt avalanche method?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The debt avalanche method is a payoff strategy that prioritizes debts with higher interest rates first while maintaining required payments on other debts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the debt snowball method?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The debt snowball method is a payoff strategy that prioritizes smaller balances first, helping users build momentum as each debt is paid down."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does PayWise AI give financial advice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. PayWise AI is for personal organization and educational budgeting guidance. It is not a bank, lender, investment adviser, tax adviser, legal adviser, or licensed financial adviser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does PayWise AI require a login?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. PayWise AI is designed to work without requiring a login."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PayWise AI free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PayWise AI has a free plan that lets users track up to 5 debts. Premium plans unlock unlimited debt tracking and deeper payoff planning features."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does PayWise AI Premium include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PayWise AI Premium includes unlimited debt tracking, payoff strategy comparison, debt-free date insights, and debt reports."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does PayWise AI have a lifetime purchase option?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PayWise AI Lifetime Premium is available as a one-time purchase of $34.99."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PayWise AI available on the App Store?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PayWise AI Budget Planner is available for iPhone and iPad on the App Store."
+          }
+        }
+      ]
+    }
+  ]
+}

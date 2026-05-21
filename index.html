@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PayWise AI Budget Planner – AI Debt Payoff &amp; Repayment Tracker</title>
+  <meta name="description" content="PayWise AI Budget Planner helps you track debts, repayment dates, payoff progress, and AI-guided repayment insights. Track credit cards, loans, PayLater, and more in one simple app.">
+  <meta name="keywords" content="AI budget planner, debt payoff planner, debt tracker, repayment reminder, credit card debt tracker, PayLater tracker, loan tracker, bill reminder, personal finance app, financial habit tracker">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jerryng145.github.io/paywise-ai/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PayWise AI Budget Planner">
+  <meta property="og:description" content="Track debt, plan repayments, and see your payoff progress clearly with PayWise AI.">
+  <meta property="og:url" content="https://jerryng145.github.io/paywise-ai/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PayWise AI Budget Planner">
+  <meta name="twitter:description" content="A simple debt payoff and repayment tracker for credit cards, loans, PayLater, and more.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7fafc;
+      --panel: #ffffff;
+      --ink: #122033;
+      --muted: #5d6b7a;
+      --line: #dbe5ee;
+      --blue: #0f73d8;
+      --green: #198754;
+      --gold: #b88400;
+      --shadow: 0 18px 48px rgba(18, 32, 51, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f7fbff 0%, #eef6f8 52%, #f8fafc 100%);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(219, 229, 238, 0.8);
+      background: rgba(247, 250, 252, 0.86);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      z-index: 5;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--ink);
+    }
+
+    .mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, #0f73d8, #0c8c65);
+      font-weight: 900;
+    }
+
+    .mark img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 76px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.08;
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.65rem, 6vw, 5.45rem);
+      max-width: 900px;
+      margin-top: 14px;
+    }
+
+    .headline {
+      font-size: clamp(1.55rem, 3vw, 2.55rem);
+      font-weight: 800;
+      margin: 20px 0 0;
+      max-width: 820px;
+    }
+
+    .subheadline {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+      max-width: 760px;
+      margin: 20px 0 0;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 8px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      color: #fff;
+      background: var(--blue);
+      box-shadow: 0 12px 28px rgba(15, 115, 216, 0.24);
+    }
+
+    .button.secondary {
+      color: var(--ink);
+      background: #fff;
+      border-color: var(--line);
+    }
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .phone-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .app-preview {
+      border: 1px solid #cfdce8;
+      border-radius: 8px;
+      background: #f8fbff;
+      overflow: hidden;
+    }
+
+    .preview-top {
+      padding: 20px;
+      background: linear-gradient(135deg, #0f73d8, #0c8c65);
+      color: #fff;
+    }
+
+    .preview-top strong {
+      display: block;
+      font-size: 1.35rem;
+    }
+
+    .preview-body {
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .mini-row span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 14px 0 0;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3.6vw, 3rem);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(18, 32, 51, 0.06);
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      background: #e9f3ff;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .audience-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .audience-list li {
+      padding: 14px 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .notice {
+      background: #fff8e7;
+      border: 1px solid #f1d894;
+      border-radius: 8px;
+      padding: 24px;
+      color: #453300;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .price {
+      min-height: 100%;
+    }
+
+    .price strong {
+      display: block;
+      font-size: 1.7rem;
+      margin: 10px 0;
+    }
+
+    .price small {
+      color: var(--muted);
+      display: block;
+    }
+
+    .premium-note {
+      margin-top: 16px;
+      color: var(--muted);
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    details p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: #fff;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .grid,
+      .pricing {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .navlinks {
+        display: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .grid,
+      .pricing,
+      .audience-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "PayWise AI Budget Planner",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "iOS",
+        "description": "PayWise AI Budget Planner helps users track debts, repayment dates, payoff progress, and AI-guided repayment insights for personal organization and educational budgeting guidance.",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free plan",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Track up to 5 debts."
+          },
+          {
+            "@type": "Offer",
+            "name": "Monthly Premium",
+            "price": "3.99",
+            "priceCurrency": "USD",
+            "description": "Monthly Premium after a 7-day free trial."
+          },
+          {
+            "@type": "Offer",
+            "name": "Yearly Premium",
+            "price": "29.99",
+            "priceCurrency": "USD",
+            "description": "Yearly Premium after a 7-day free trial."
+          },
+          {
+            "@type": "Offer",
+            "name": "Lifetime Premium",
+            "price": "34.99",
+            "priceCurrency": "USD",
+            "description": "One-time lifetime Premium purchase."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is PayWise AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PayWise AI is a personal finance app that helps users organize debts, repayment dates, payoff progress, and AI-guided repayment insights in one place."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is PayWise AI a budget planner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PayWise AI works as a simple budget planner focused on debt tracking, repayment planning, payoff progress, and personal financial habits."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can PayWise AI track credit card debt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PayWise AI can be used to track credit card balances, repayment dates, progress, and payoff planning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can PayWise AI track PayLater or installment debt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PayWise AI can help organize PayLater balances, installment payments, repayment dates, and overall payoff progress."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does PayWise AI support loans?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PayWise AI can help users track personal loans, car loans, home loans, and other debt repayment plans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the debt avalanche method?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The debt avalanche method is a payoff strategy that prioritizes debts with higher interest rates first while maintaining required payments on other debts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the debt snowball method?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The debt snowball method is a payoff strategy that prioritizes smaller balances first, helping users build momentum as each debt is paid down."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does PayWise AI give financial advice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. PayWise AI is for personal organization and educational budgeting guidance. It is not a bank, lender, investment adviser, tax adviser, legal adviser, or licensed financial adviser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does PayWise AI require a login?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. PayWise AI is designed to work without requiring a login."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is PayWise AI free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PayWise AI has a free plan that lets users track up to 5 debts. Premium plans unlock unlimited debt tracking and deeper payoff planning features."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does PayWise AI Premium include?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PayWise AI Premium includes unlimited debt tracking, payoff strategy comparison, debt-free date insights, and debt reports."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does PayWise AI have a lifetime purchase option?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PayWise AI Lifetime Premium is available as a one-time purchase of $34.99."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is PayWise AI available on the App Store?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PayWise AI Budget Planner is available for iPhone and iPad on the App Store."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="PayWise AI home">
+          <span class="mark"><img src="assets/paywise-ai-app-icon.png" alt="" width="34" height="34"></span>
+          <span>PayWise AI</span>
+        </a>
+        <div class="navlinks">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://apps.apple.com/us/app/paywise-ai-budget-planner/id6769028548">App Store</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Official app website</div>
+          <h1>PayWise AI Budget Planner</h1>
+          <p class="headline">Track Debt, Plan Repayments, and See Your Payoff Progress Clearly</p>
+          <p class="subheadline">PayWise AI helps you organize debts, repayment dates, payoff progress, and AI-guided repayment insights in one simple personal finance app.</p>
+          <div class="actions">
+            <a class="button primary" href="https://apps.apple.com/us/app/paywise-ai-budget-planner/id6769028548">Download on the App Store</a>
+            <a class="button secondary" href="#how-it-works">Learn how PayWise AI works</a>
+          </div>
+        </div>
+        <aside class="phone-card" aria-label="PayWise AI app preview">
+          <div class="app-preview">
+            <div class="preview-top">
+              <img src="assets/paywise-ai-app-icon.png" alt="PayWise AI app icon" width="72" height="72" style="border-radius:16px;margin-bottom:16px;box-shadow:0 10px 24px rgba(0,0,0,0.18);">
+              <span>Dashboard</span>
+              <strong>Total outstanding</strong>
+              <p>$4,820.00 tracked</p>
+            </div>
+            <div class="preview-body">
+              <div class="mini-row"><strong>Credit Card</strong><span>Due soon</span></div>
+              <div class="mini-row"><strong>Car Loan</strong><span>On track</span></div>
+              <div class="mini-row"><strong>PayLater</strong><span>Next 7 days</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Key Features</h2>
+          <p>PayWise AI gives everyday users a clearer way to organize debt, compare repayment paths, and keep upcoming payments visible.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="icon">1</div>
+            <h3>Track all debts in one place</h3>
+            <p>Add credit cards, loans, PayLater balances, installment plans, and other debts into one organized tracker.</p>
+          </article>
+          <article class="card">
+            <div class="icon">2</div>
+            <h3>Never miss upcoming repayments</h3>
+            <p>Keep repayment dates visible so you can plan ahead and avoid losing track of what is due soon.</p>
+          </article>
+          <article class="card">
+            <div class="icon">3</div>
+            <h3>See your payoff progress clearly</h3>
+            <p>Review total outstanding debt, payoff progress, and repayment movement in a simple visual dashboard.</p>
+          </article>
+          <article class="card">
+            <div class="icon">4</div>
+            <h3>Compare payoff strategies</h3>
+            <p>Compare debt avalanche and debt snowball approaches to understand different ways to organize repayment priority.</p>
+          </article>
+          <article class="card">
+            <div class="icon">5</div>
+            <h3>Get AI-guided debt insights</h3>
+            <p>Use AI-style insights to understand your repayment picture, spot patterns, and stay focused on next steps.</p>
+          </article>
+          <article class="card">
+            <div class="icon">6</div>
+            <h3>Unlock Premium for unlimited tracking and deeper payoff planning</h3>
+            <p>Premium unlocks unlimited debt tracking, payoff strategy comparison, debt-free date insights, and debt reports.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="wrap split">
+        <div class="section-head">
+          <h2>Who It Is For</h2>
+          <p>PayWise AI is built for people who want a simpler view of repayment dates, balances, and payoff progress.</p>
+        </div>
+        <ul class="audience-list">
+          <li>People managing credit card debt</li>
+          <li>PayLater / installment users</li>
+          <li>Personal loan users</li>
+          <li>Car loan users</li>
+          <li>Home loan / mortgage users</li>
+          <li>Anyone who wants a simple debt payoff tracker</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="privacy-title">
+      <div class="wrap">
+        <div class="notice">
+          <h2 id="privacy-title">Privacy-first and educational guidance</h2>
+          <p>PayWise AI is built for personal organization and educational budgeting guidance. PayWise AI is not a bank, lender, investment adviser, tax adviser, legal adviser, or licensed financial adviser. The app does not make financial decisions for users. Users are responsible for their own financial choices.</p>
+          <p><a href="https://jerryng145.github.io/paywise-ai-privacy-policy/">Read the Privacy Policy</a> or <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">view the Terms of Use</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Pricing</h2>
+          <p>Start free, then upgrade when you want unlimited tracking and deeper payoff planning.</p>
+        </div>
+        <div class="pricing">
+          <article class="card price">
+            <h3>Free plan</h3>
+            <strong>$0</strong>
+            <small>Track up to 5 debts</small>
+          </article>
+          <article class="card price">
+            <h3>Monthly Premium</h3>
+            <strong>$3.99</strong>
+            <small>Per month after a 7-day free trial</small>
+          </article>
+          <article class="card price">
+            <h3>Yearly Premium</h3>
+            <strong>$29.99</strong>
+            <small>Per year after a 7-day free trial</small>
+          </article>
+          <article class="card price">
+            <h3>Lifetime Premium</h3>
+            <strong>$34.99</strong>
+            <small>One-time purchase</small>
+          </article>
+        </div>
+        <p class="premium-note">Premium unlocks unlimited debt tracking, payoff strategy comparison, debt-free date insights, and debt reports.</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p>Quick answers for people comparing budget planners, debt trackers, and repayment reminder apps.</p>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>What is PayWise AI?</summary>
+            <p>PayWise AI is a personal finance app that helps users organize debts, repayment dates, payoff progress, and AI-guided repayment insights in one place.</p>
+          </details>
+          <details>
+            <summary>Is PayWise AI a budget planner?</summary>
+            <p>Yes. PayWise AI works as a simple budget planner focused on debt tracking, repayment planning, payoff progress, and personal financial habits.</p>
+          </details>
+          <details>
+            <summary>Can PayWise AI track credit card debt?</summary>
+            <p>Yes. PayWise AI can be used to track credit card balances, repayment dates, progress, and payoff planning.</p>
+          </details>
+          <details>
+            <summary>Can PayWise AI track PayLater or installment debt?</summary>
+            <p>Yes. PayWise AI can help organize PayLater balances, installment payments, repayment dates, and overall payoff progress.</p>
+          </details>
+          <details>
+            <summary>Does PayWise AI support loans?</summary>
+            <p>Yes. PayWise AI can help users track personal loans, car loans, home loans, and other debt repayment plans.</p>
+          </details>
+          <details>
+            <summary>What is the debt avalanche method?</summary>
+            <p>The debt avalanche method is a payoff strategy that prioritizes debts with higher interest rates first while maintaining required payments on other debts.</p>
+          </details>
+          <details>
+            <summary>What is the debt snowball method?</summary>
+            <p>The debt snowball method is a payoff strategy that prioritizes smaller balances first, helping users build momentum as each debt is paid down.</p>
+          </details>
+          <details>
+            <summary>Does PayWise AI give financial advice?</summary>
+            <p>No. PayWise AI is for personal organization and educational budgeting guidance. It is not a bank, lender, investment adviser, tax adviser, legal adviser, or licensed financial adviser.</p>
+          </details>
+          <details>
+            <summary>Does PayWise AI require a login?</summary>
+            <p>No. PayWise AI is designed to work without requiring a login.</p>
+          </details>
+          <details>
+            <summary>Is PayWise AI free?</summary>
+            <p>PayWise AI has a free plan that lets users track up to 5 debts. Premium plans unlock unlimited debt tracking and deeper payoff planning features.</p>
+          </details>
+          <details>
+            <summary>What does PayWise AI Premium include?</summary>
+            <p>PayWise AI Premium includes unlimited debt tracking, payoff strategy comparison, debt-free date insights, and debt reports.</p>
+          </details>
+          <details>
+            <summary>Does PayWise AI have a lifetime purchase option?</summary>
+            <p>Yes. PayWise AI Lifetime Premium is available as a one-time purchase of $34.99.</p>
+          </details>
+          <details>
+            <summary>Is PayWise AI available on the App Store?</summary>
+            <p>Yes. PayWise AI Budget Planner is available for iPhone and iPad on the App Store.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <strong>PayWise AI Budget Planner</strong>
+        <div>Personal organization and educational budgeting guidance.</div>
+      </div>
+      <div>
+        <a href="https://jerryng145.github.io/paywise-ai-privacy-policy/">Privacy Policy</a>
+        <span aria-hidden="true"> | </span>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
