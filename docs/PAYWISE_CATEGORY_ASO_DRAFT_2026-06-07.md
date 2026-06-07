@@ -72,3 +72,16 @@ PayWise AI helps you organize debts, repayment dates, payoff progress, and educa
   3. A Simpler Alternative to Spreadsheets
 - Metadata note: PayWise should lean harder into "debt payoff planner" than generic "budget planner" in future approved App Store metadata passes.
 - Legal link note: Privacy Policy and Apple Standard EULA links are confirmed. A dedicated PayWise support URL was not confirmed in the local docs reviewed during this pass, so it should not be invented for public pages.
+
+## 2026-06-07 Round 4 Category Hub
+
+- Hub page URL: https://jerryng145.github.io/paywise-ai/debt-payoff-planner.html
+- Support page URL: https://jerryng145.github.io/paywise-ai/support.html
+- Category cluster:
+  - debt payoff planner
+  - debt payoff planner without bank linking
+  - debt payoff planner vs spreadsheet
+  - debt snowball tracker
+  - debt avalanche planner
+- App Store metadata implication: PayWise should clearly position around "debt payoff planner" first, and "budget planner" second in future approved metadata passes.
+- Support note: The support page does not publish an email because no PayWise support email was confirmed in the public repo/docs reviewed. It directs users to the App Store product page support contact and Apple account/subscription support.
