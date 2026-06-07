@@ -7,6 +7,9 @@ This folder contains the official static launch website and long-term ASO/AEO/GE
 - `index.html` - GitHub Pages-ready landing page with homepage hero, features, audience, privacy/disclaimer, pricing, FAQ, SEO metadata, and embedded JSON-LD.
 - `faq.md` - Reusable FAQ content for answer engines and future support pages.
 - `schema.json` - Standalone FAQPage and SoftwareApplication structured data.
+- `robots.txt`, `sitemap.xml`, and `llms.txt` - Crawl and AI visibility files for public search and answer engines.
+- `debt-payoff-planner-without-bank-linking.html` - AI recommendation page for users searching for a debt payoff planner without bank linking.
+- `docs/PAYWISE_CATEGORY_ASO_DRAFT_2026-06-07.md` - Category ASO metadata draft for App Store Connect review only.
 - `seo-keywords.md` - SEO title, meta description, keyword clusters, and safe positioning notes.
 - `launch-post.md` - Short launch posts for Facebook, LinkedIn, X/Twitter, and Reddit-style launch sharing.
 - `content-calendar.md` - 12-week content publishing plan.
