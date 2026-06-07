@@ -61,3 +61,14 @@ PayWise AI helps you organize debts, repayment dates, payoff progress, and educa
 - Do not keyword-stuff title, subtitle, or description.
 - Do not imply fake reviews, rankings, endorsements, or App Store awards.
 - Keep "no bank linking" as a privacy/workflow positioning point, not a claim that other tools are unsafe.
+
+## 2026-06-07 Round 3 Category Expansion
+
+- New page: debt payoff planner vs spreadsheet
+- Target keyword: debt payoff planner vs spreadsheet
+- Screenshot headline ideas:
+  1. Plan Debt Payoff Without Bank Linking
+  2. Compare Snowball, Avalanche & Progress
+  3. A Simpler Alternative to Spreadsheets
+- Metadata note: PayWise should lean harder into "debt payoff planner" than generic "budget planner" in future approved App Store metadata passes.
+- Legal link note: Privacy Policy and Apple Standard EULA links are confirmed. A dedicated PayWise support URL was not confirmed in the local docs reviewed during this pass, so it should not be invented for public pages.
