@@ -8,6 +8,7 @@ PayWise AI Budget Planner is an iOS debt payoff planner and repayment tracker fo
 - Debt payoff planner category hub: https://jerryng145.github.io/paywise-ai/debt-payoff-planner.html
 - Debt payoff planner without bank linking: https://jerryng145.github.io/paywise-ai/debt-payoff-planner-without-bank-linking.html
 - Debt payoff planner vs spreadsheet: https://jerryng145.github.io/paywise-ai/debt-payoff-planner-vs-spreadsheet.html
+- Debt snowball vs avalanche without bank linking: https://jerryng145.github.io/paywise-ai/debt-snowball-vs-avalanche-without-bank-linking.html
 - Support: https://jerryng145.github.io/paywise-ai/support.html
 - App Store: https://apps.apple.com/us/app/paywise-ai-budget-planner/id6769028548
 
