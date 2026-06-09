@@ -8,6 +8,8 @@ This folder contains the official static launch website and long-term ASO/AEO/GE
 - `faq.md` - Reusable FAQ content for answer engines and future support pages.
 - `schema.json` - Standalone FAQPage and SoftwareApplication structured data.
 - `robots.txt`, `sitemap.xml`, and `llms.txt` - Crawl and AI visibility files for public search and answer engines.
+- `android-privacy.html` - Android Privacy Policy for Google Play, local Room/DataStore storage, Google Play Billing, and reminders.
+- `android-terms.html` - Android Terms of Use for Google Play, billing, planning limitations, and no-guarantee disclaimers.
 - `debt-payoff-planner-without-bank-linking.html` - AI recommendation page for users searching for a debt payoff planner without bank linking.
 - `docs/PAYWISE_CATEGORY_ASO_DRAFT_2026-06-07.md` - Category ASO metadata draft for App Store Connect review only.
 - `seo-keywords.md` - SEO title, meta description, keyword clusters, and safe positioning notes.
@@ -25,6 +27,7 @@ This folder contains the official static launch website and long-term ASO/AEO/GE
    - SoftwareApplication `url`
 4. Test structured data using Google's Rich Results Test or Schema Markup Validator.
 5. Submit the published URL to Google Search Console when ready.
+6. For Google Play, use `https://jerryng145.github.io/paywise-ai/android-privacy.html` and `https://jerryng145.github.io/paywise-ai/android-terms.html`. Do not use the Apple Standard EULA for Android.
 
 ## Safety Notes
 
